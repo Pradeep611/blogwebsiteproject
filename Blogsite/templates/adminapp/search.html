@@ -1,0 +1,39 @@
+{% extends 'adminapp/base.html' %}
+
+{% block body %}
+
+<div class="container my-2">
+
+<h3>Search Results:</h3>
+{% if allposts|length == 0 %}
+    <p>
+    Your search- <b>"{{ query }}"</b> did not match any documents
+</p>
+<p>
+    Suggestions: Try different keywords
+</p>
+{% endif %}
+</div>
+
+
+{% for d  in allposts  %}
+
+<div class="container border my-3">
+       
+            <div class="card">
+                <h5 class="card-header">{{ d.title }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{ d.unm }}  {{ d.timestamp }}</h5>
+                    <div></div>
+                    <p class="card-text">
+                        {{ d.content | truncatechars:250 }}
+                    </p>
+                    <a href="/adminapp/showsingle/{{ d.slug }}" class="btn btn-primary">continue reading</a>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+{% endblock body %}

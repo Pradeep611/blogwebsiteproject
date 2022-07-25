@@ -1,0 +1,48 @@
+{% extends 'userapp/indexblubase.html' %}
+{% block userbeforelogin %}
+    
+<div class="container my-3 text-white">
+    <h4>You can post your blogs from here</h4>
+    <br>
+    <form action="" method="post" enctype='multipart/form-data' >
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="name">SubCategory Name</label>
+            <!--start fill dropdown from database-->
+            <select name="scname" class="form-control" id="SubCategory">
+                <option value="">
+                    -Select SubCategory-
+                </option>
+                {% for d in data %}
+                    <option value='{{ d.scatname }}'>
+                        {{ d.scatname }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="btitle">Title for your blog</label>
+            <input type="text"
+                   class="form-control"
+                   id="btitle"
+                   name="btitle"
+                   aria-describedby="emailHelp"
+                   placeholder="Title">
+            <br>
+            <div class="form-group">
+                <label for="bgicon">Blog Icon</label>
+                <input type="file" class="form-control-file" id="bgicon" name="bgicon">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="blgcontent">Write Blog Here</label>
+                <textarea class="form-control" id="blgcontent" name="blgcontent" rows="3"></textarea>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock userbeforelogin %}

@@ -1,0 +1,39 @@
+{% extends 'userapp/indexblubase.html' %}
+{% block userbeforelogin %}
+    <div class="container my-3 text-white">
+        <h6>You can submit your queries here</h6>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name"> <b> Name</b></label>
+                <input type="text"
+                       class="form-control bg-secondary text-white"
+                       id="name"
+                       name="name"
+                       placeholder="Your Name" Required>
+            </div>
+            <div class="form-group ">
+                <label for="email"> <b> Email address </b></label>
+                <input type="email"
+                       class="form-control bg-secondary text-white"
+                       id="email"
+                       name="email"
+                       aria-describedby="emailHelp"
+                       placeholder="Enter email" Required>
+            </div>
+            <div class="form-group ">
+                <label for="phone"> <b> Phone No </b></label>
+                <input type="text"
+                       class="form-control bg-secondary text-white"
+                       id="phone"
+                       name="phone"
+                       placeholder="Phone No" Required>
+            </div>
+            <div class="form-group">
+                <label for="msg">  <b> Please describe your issue in brief </b></label>
+                <textarea class="form-control bg-secondary text-white" id="msg" name="msg"  rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+    </div>
+{% endblock userbeforelogin %}

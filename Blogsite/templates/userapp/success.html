@@ -1,0 +1,20 @@
+{% extends 'userapp/indexblubase.html' %}
+
+
+{% block userbeforelogin %}
+
+<center>
+
+    <hr>
+
+    <h3>please enter your registered email id</h3>
+
+    <form action="" method="post" >
+      {% csrf_token %}
+
+        <input type="email" name="fmail" id="" placeholder="enter your mail" >
+        <input type="submit" value="submit">
+    </form>
+</center>
+
+{% endblock userbeforelogin %}

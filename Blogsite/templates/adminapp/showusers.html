@@ -1,0 +1,35 @@
+{% extends 'adminapp/base.html' %}
+
+{% block title %}Users{% endblock title %}
+
+{% block body %}
+
+
+ <div class="container my-2 text-white">
+
+<table class="table border p-2 ">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Sno</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for d in user_data %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{d.unm}}</td>
+        <td>{{d.eid}}</td>
+        <td>{{d.mno}}</td>
+      </tr>
+      {% endfor %}
+     
+    </tbody>
+  </table>
+</div>
+
+
+
+{% endblock body %}

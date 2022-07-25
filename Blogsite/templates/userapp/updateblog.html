@@ -1,0 +1,38 @@
+{% extends 'userapp/indexblubase.html' %}
+{% block userbeforelogin %}
+    <hr>
+    <div class="container my-2">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="btitle">Subcategory</label>
+                <input type="text"
+                       class="form-control"
+                       id="btitle"
+                       name="btitle"
+                       value="{{ data.subcategory }}"
+                       readonly
+                       True
+                       aria-describedby="emailHelp"
+                       placeholder="Title">
+                <br>
+                <div class="form-group">
+                    <label for="btitle">Title for your blog</label>
+                    <input type="text" class="form-control" id="btitle" name="btitle" value={{ data.title }} aria-describedby="emailHelp" placeholder="Title">
+                    <br>
+                    <div class="form-group">
+                        <label for="bgicon">Blog Icon</label>
+                        <input type="file" class="form-control-file" id="bgicon" name="bgicon">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="blgcontent">Write Blog Here</label>
+                        <textarea class="form-control" id="blgcontent" name="blgcontent" rows="3">{{data.content}}</textarea>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock userbeforelogin %}

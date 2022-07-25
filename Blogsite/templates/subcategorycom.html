@@ -1,0 +1,30 @@
+{% extends 'userapp/indexblubase.html' %}
+{% block userbeforelogin %}
+<div class="container text-white my-3">
+    <table class="table text-white">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">SubCategory Name</th>
+                <th scope="col">Icon</th>
+                <th scope="col">Desc</th>
+                <th scope="col">Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in subcategory_data   %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{d.cname}}</td>
+                    <td>{{ d.scatname }}</td>
+                    <td><img src="/media/{{d.scicon}}" height="40" alt="image"></td>
+                    <td>{{ d.scdesc }}</td>
+                    <td>{{ d.regdate }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock userbeforelogin %}

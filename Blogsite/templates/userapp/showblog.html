@@ -1,0 +1,33 @@
+{% extends 'userapp/indexblubase.html' %}
+{% block userbeforelogin %}
+    <div class="container  my-3">
+        <div class="card">
+            <h5 class="card-header">{{ blg_data.title }}</h5>
+            <img src="/media/{{blg_data.bl_image}}" class="w-100" height="700" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ blg_data.unm }}  {{ blg_data.timestamp }}</h5>
+                <div></div>
+                <p class="card-text">
+                    {{ blg_data.content }}
+                </p>
+            </div>
+        </div>
+
+       
+    
+        {% if rec == l_user.eid  %}
+
+        
+        
+        
+        <div class="my-2">
+            <div class="row my-2">
+                <a href="/userapp/updateblog/{{blg_data.id}}" class="btn btn-sm btn-primary">Update</a>
+            </div>
+            <div class="row my-2">
+                <a href="/userapp/deleteblog/{{blg_data.id}}" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock userbeforelogin %}

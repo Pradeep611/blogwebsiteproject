@@ -1,0 +1,41 @@
+{% extends 'userapp/indexblubase.html' %}
+
+{% block userbeforelogin %}
+
+<hr><hr>
+
+<div class="container">
+
+<form action="/userapp/addblogcat" method="get">
+    {% csrf_token %}
+    <h6>Please select category and go to next page to post your blog</h6>
+
+<div class="form-group">
+    <label for="name">Category Name</label>
+    <!--start fill dropdown from database-->
+    <select name="name" class="form-control" id="name">
+        <option value="">
+            -Select Category-
+        </option>
+        {% for d in data %}
+            <option value="{{ d.id }}">
+                {{ d.catname }}
+            </option>
+            {% endfor %}  
+        
+    </select>
+    <input type="submit" value="Click here">
+    
+</form>
+   
+</div>
+
+
+
+</div>
+
+
+{% endblock userbeforelogin %}
+
+
+

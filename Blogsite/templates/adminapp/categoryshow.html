@@ -1,0 +1,47 @@
+{% extends 'adminapp/base.html' %}
+{% block title %}
+    Category
+{% endblock title %}
+{% block body %}
+<div class="container my-2 text-white">
+  <h6>You can see here all the categories available under which you can post blogs</h6>
+    <table class="table bg-grey text-white">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Icon</th>
+                <th scope="col">Desc</th>
+                <th scope="col">Date</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data   %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ d.catname }}</td>
+                    <td><img src="/media/{{d.caticon}}" alt="" class=" d-block " height="40"></td>
+                    <td>{{ d.catdesc }}</td>
+                    <td>{{ d.regdate }}</td>
+                    <td>
+                       <a href="/adminapp/categoryupdate/{{d.id}}" class="btn btn-primary">Update</a>
+                    </td>
+                    <!--start delete button-->
+                     <td>
+                         <a href="/adminapp/categorydelete?cname={{ d.catname }}">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a> 
+
+                        
+
+                    </td>
+                     
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endblock body %}

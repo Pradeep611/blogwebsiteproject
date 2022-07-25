@@ -1,0 +1,192 @@
+{% extends 'userapp/indexblubase.html' %}
+{% block userbeforelogin %}
+    {# start Sidebar #}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
+                     style="width: 280px;
+                            user-select: auto;">
+                    <a href="/"
+                       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                       style="user-select: auto;">
+                        <svg class="bi me-2" width="40" height="32" style="user-select: auto;">
+                            <use xlink:href="#bootstrap" style="user-select: auto;"></use>
+                        </svg>
+                        <span class="fs-4" style="user-select: auto;">Sidebar</span>
+                    </a>
+                    <hr style="user-select: auto;">
+                    <ul class="nav nav-pills flex-column mb-auto" style="user-select: auto;">
+                        <li class="nav-item" style="user-select: auto;">
+                            <a href="#"
+                               class="nav-link active"
+                               aria-current="page"
+                               style="user-select: auto;">
+                                <svg class="bi me-2" width="16" height="16" style="user-select: auto;">
+                                    <use xlink:href="#home" style="user-select: auto;"></use>
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li style="user-select: auto;">
+                            <a href="#" class="nav-link text-white" style="user-select: auto;">
+                                <svg class="bi me-2" width="16" height="16" style="user-select: auto;">
+                                    <use xlink:href="#speedometer2" style="user-select: auto;"></use>
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li style="user-select: auto;">
+                            <a href="#" class="nav-link text-white" style="user-select: auto;">
+                                <svg class="bi me-2" width="16" height="16" style="user-select: auto;">
+                                    <use xlink:href="#table" style="user-select: auto;"></use>
+                                </svg>
+                                Orders
+                            </a>
+                        </li>
+                        <li style="user-select: auto;">
+                            <a href="#" class="nav-link text-white" style="user-select: auto;">
+                                <svg class="bi me-2" width="16" height="16" style="user-select: auto;">
+                                    <use xlink:href="#grid" style="user-select: auto;"></use>
+                                </svg>
+                                Products
+                            </a>
+                        </li>
+                        <li style="user-select: auto;">
+                            <a href="#" class="nav-link text-white" style="user-select: auto;">
+                                <svg class="bi me-2" width="16" height="16" style="user-select: auto;">
+                                    <use xlink:href="#people-circle" style="user-select: auto;"></use>
+                                </svg>
+                                Customers
+                            </a>
+                        </li>
+                    </ul>
+                    <hr style="user-select: auto;">
+                    <div class="dropdown" style="user-select: auto;">
+                        <a href="#"
+                           class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                           id="dropdownUser1"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false"
+                           style="user-select: auto;">
+                            <img src="https://github.com/mdo.png"
+                                 alt=""
+                                 width="32"
+                                 height="32"
+                                 class="rounded-circle me-2"
+                                 style="user-select: auto;">
+                            <strong style="user-select: auto;">mdo</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                            aria-labelledby="dropdownUser1"
+                            style="user-select: auto;">
+                            <li style="user-select: auto;">
+                                <a class="dropdown-item" href="#" style="user-select: auto;">New project...</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="dropdown-item" href="#" style="user-select: auto;">Settings</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="dropdown-item" href="#" style="user-select: auto;">Profile</a>
+                            </li>
+                            <li style="user-select: auto;">
+                                <hr class="dropdown-divider" style="user-select: auto;">
+                            </li>
+                            <li style="user-select: auto;">
+                                <a class="dropdown-item" href="#" style="user-select: auto;">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {# end Sidebar #}
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock userbeforelogin %}

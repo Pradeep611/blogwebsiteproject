@@ -1,0 +1,32 @@
+{% extends 'adminapp/base.html' %}
+{% block body %}
+    <div class="container my-2">
+        <form action="" method="post" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cname">Category Name</label>
+                <input type="text"
+                       class="form-control"
+                       id="cname"
+                       name="cname"
+                       value="{{ data.catname }}"
+                       aria-describedby="emailHelp"
+                       placeholder="Name of Category">
+            
+            <div class="form-group">
+                <label for="cic">Category Icon</label>
+                <img src="/media/{{ data.caticon }}" class="width-100" height="50" alt="">
+                <input type="file"
+                       class="form-control-file"
+                       id="cicon"
+                       value=""
+                       name="cicon">
+            </div>
+            <div class="form-group">
+                <label for="cdesc">Description Of Category</label>
+                <textarea class="form-control" id="cdesc" name="cdesc" placeholder="Write description" rows="3">{{data.catdesc}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock body %}

@@ -1,0 +1,44 @@
+"""Blogsite URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path,include
+from . import views
+
+# imports for media 
+from django.conf import settings
+from django.conf.urls.static import static
+
+admin.site.site_header = "Praedico Global Research Blogs admin"
+admin.site.site_title = "Praedico Global Research Admin Panel"
+admin.site.index_title = "Welcome to Praedico  Global Research Admin Panel"
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('adminapp/',include('adminapp.urls')),
+    path('userapp/',include('userapp.urls')),
+
+    path('',views.landingpage,name='landingpage'),
+    path('about/',views.about,name='about'),
+    path('contact/',views.contact,name='contact'),
+    path('blogs/',views.blogs,name='blogs'),
+
+    path('showcategorycommon/',views.showcategorycommon,name='categories'),
+    path('showsubcategorycom/',views.subcategorycom,name='subcategories'),
+    path('subshow/<str:cname>',views.subshow,name='subshow'),
+    
+    
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+

@@ -1,0 +1,44 @@
+{% extends 'adminapp/base.html' %}
+
+{% block body %}
+
+<div class="container my-3">
+    <form action="" method="post" enctype='multipart/form-data' >
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="cname">Category Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="cname"
+                   name="cname"
+                   value="{{data.cname}}"
+                   readonly ="true"
+                   aria-describedby="emailHelp"
+                   placeholder="Name of Category">
+            <br>
+        <div class="form-group">
+            <label for="scname">SubCategory Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="scname"
+                   value="{{data.scatname}}"
+                   name="scname"
+                   aria-describedby="emailHelp"
+                   placeholder="Name of SubCategory">
+            <br>
+            <div class="form-group">
+                <label for="scicon">SubCategory Icon</label>
+                <input type="file"  value="{{data.scicon}}" class="form-control-file" id="scicon" name="scicon">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="cdesc">Description Of SubCategory</label>
+                <textarea class="form-control" id="scdesc" name="scdesc" rows="3">{{data.scdesc}}</textarea>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock body %}

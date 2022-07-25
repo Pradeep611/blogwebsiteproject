@@ -1,0 +1,47 @@
+{% extends 'adminapp/base.html' %}
+{% block title %}
+    SubCategory
+{% endblock title %}
+{% block body %}
+    <div class="container my-3 text-white">
+        <form action="" method="post" enctype='multipart/form-data' >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Category Name</label>
+                <!--start fill dropdown from database-->
+                <select name="name" class="form-control" id="exampleFormControlSelect1">
+                    <option value="">
+                        -Select Category-
+                    </option>
+                    {% for d in data %}
+                        <option value='{{d.catname}}' >{{ d.catname }}
+                        </option>
+                    {% endfor %}
+                </select>
+                
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="cname">SubCategory Name</label>
+                <input type="text"
+                       class="form-control"
+                       id="scname"
+                       name="scname"
+                       aria-describedby="emailHelp"
+                       placeholder="Name of SubCategory">
+                <br>
+                <div class="form-group">
+                    <label for="scicon">SubCategory Icon</label>
+                    <input type="file" class="form-control-file" id="scicon" name="scicon">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="cdesc">Description Of SubCategory</label>
+                    <textarea class="form-control" id="scdesc" name="scdesc" rows="3"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock body %}

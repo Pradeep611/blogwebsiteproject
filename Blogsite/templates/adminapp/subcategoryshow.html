@@ -1,0 +1,76 @@
+{% extends 'adminapp/base.html' %}
+
+{% block title %}Subcategory-show{% endblock title %}
+
+{% block body %}
+<div class="container my-2 text-white">
+  <h6>You can see here all the Subcategories available under which you can post blogs</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">SubCategory Name</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Date</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in data   %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{d.cname}}</td>
+                <td>{{ d.scatname }}</td>
+                <td>
+                  <img src="/media/{{d.scicon}}" height="40" alt="">
+                </td>
+                <td>{{ d.scdesc }}</td>
+                <td>{{ d.regdate }}</td>
+                <td>
+                  <a href="/adminapp/subcategoryupdate/{{d.id}}" class="btn btn-primary">Update</a>
+                </td>
+                <!--start delete button-->
+                <td>
+                     {% comment %} <a href="/adminapp/categorydelete?cname={{ d.catname }}"> {% endcomment %}
+                        <a href="/adminapp/subcategorydel/{{d.id}}">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </a> 
+
+
+                    {% comment %} <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodalscat">
+                        Delete
+                      </button>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="deletemodalscat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h6>Please confirm if you want to delete</h6>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/adminapp/subcategorydel/{{d.id}}" class="btn btn-danger" >Delete</a>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div> {% endcomment %}
+
+                </td>
+                <!--end delete button-->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,152 @@
+{% extends 'userapp/indexblubase.html' %}
+{% load static %}
+{% block userbeforelogin %}
+    <!-- carousel begin -->
+    <div id="carouselExampleCaptions"
+         class="carousel slide"
+         data-ride="carousel"
+         style="user-select: auto;">
+        <ol class="carousel-indicators" style="user-select: auto;">
+            <li data-target="#carouselExampleCaptions"
+                data-slide-to="0"
+                class=""
+                style="user-select: auto;"></li>
+            <li data-target="#carouselExampleCaptions"
+                data-slide-to="1"
+                class="active"
+                style="user-select: auto;"></li>
+            <li data-target="#carouselExampleCaptions"
+                data-slide-to="2"
+                class=""
+                style="user-select: auto;"></li>
+        </ol>
+        <div class="carousel-inner" style="user-select: auto;">
+            <div class="carousel-item" style="user-select: auto;">
+                <img class="d-block w-100"
+                     data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                     alt="First slide [800x400]"
+                     height="695"
+                     src="/static/images/img4.jpg">
+                <div class="carousel-caption d-none d-md-block" style="user-select: auto;">
+                    <h5 style="user-select: auto;"></h5>
+                    <p style="user-select: auto;">
+                        {% comment %} Nulla vitae elit libero, a pharetra augue mollis interdum. {% endcomment %}
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item active" style="user-select: auto;">
+                <img class="d-block w-100"
+                     data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide"
+                     alt="Second slide [800x400]"
+                     height="695"
+                     src="/static/images/img2.jpg "
+                     data-holder-rendered="true"
+                     style="user-select: auto;">
+                <div class="carousel-caption d-none d-md-block" style="user-select: auto;">
+                    <h5 style="user-select: auto;">{# Second slide label #}</h5>
+                    <p style="user-select: auto;">
+                       {#Lorem ipsum dolor sit amet, consectetur adipiscing elit.#} 
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item" style="user-select: auto;">
+                <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x400]" height="695" src="/static/images/img3.jpg"" data-holder-rendered="true" style="user-select: auto;">
+                <div class="carousel-caption d-none d-md-block" style="user-select: auto;">
+                    <h5 style="user-select: auto;">{#Third slide label#}</h5>
+                    <p style="user-select: auto;">
+                        {#Praesent commodo cursus magna, vel scelerisque nisl consectetur.#}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev"
+           href="#carouselExampleCaptions"
+           role="button"
+           data-slide="prev"
+           style="user-select: auto;">
+            <span class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                  style="user-select: auto;"></span>
+            <span class="sr-only" style="user-select: auto;">Previous</span>
+        </a>
+        <a class="carousel-control-next"
+           href="#carouselExampleCaptions"
+           role="button"
+           data-slide="next"
+           style="user-select: auto;">
+            <span class="carousel-control-next-icon"
+                  aria-hidden="true"
+                  style="user-select: auto;"></span>
+            <span class="sr-only" style="user-select: auto;">Next</span>
+        </a>
+    </div>
+    {% comment %} carousel end {% endcomment %}
+    {% comment "blogs container start" %}{% endcomment %}
+    {% comment %} <div class="container my-3">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    {% comment "blogs container end" %}{% endcomment %}
+    {% comment "footer start" %}{% endcomment %}
+    {% comment %} <div class="container my-3">
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                    With supporting text below as a natural lead-in to additional content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    {# footer end #}
+{% endblock userbeforelogin %}
